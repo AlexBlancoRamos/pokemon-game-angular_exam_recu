@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PlayerService} from "../../../game/services/player.service";
 
 @Component({
   selector: 'app-scores',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoresComponent implements OnInit {
 
-  constructor() { }
+  nombre: any;
+  puntos: any;
+
+  get score(): number {
+    return this.playerService.score;
+  }
+
+  constructor(
+    private playerService: PlayerService
+  ) { }
 
   ngOnInit(): void {
+    this.nombre = localStorage.getItem("nombre")
+
+    this.puntos = localStorage.getItem("puntos_fi")
+
   }
 
 }
+

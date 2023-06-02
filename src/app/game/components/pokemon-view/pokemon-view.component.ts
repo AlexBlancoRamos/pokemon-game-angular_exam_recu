@@ -24,6 +24,20 @@ export class PokemonViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+    let img = document.getElementById("imagen_pok")
+
+    //@ts-ignore
+    img.addEventListener("dblclick", ()=> {
+      // @ts-ignore
+      if (img.style.backgroundColor === 'red' || img.style.backgroundColor === 'black') {
+        // @ts-ignore
+        img.style.backgroundColor = 'white';
+      } else {
+        // @ts-ignore
+        img.style.backgroundColor = 'red';
+
+      }
+    })
+  }
 }
